@@ -13,12 +13,11 @@ public class Caras {
     static int rotColumnas;
 
     public static void main(String[] args) {
-        leerValores();   
-        //caras = 5;
-        carasSuperiores();
+        leerValores();//Entrada  
+        caras = 5;
+        carasSuperiores();//Procesos
         calculoCarasColindantes();
-        sumaCaras();
-        System.out.println("Caras Totales: "+caras);
+        carasTotales();//Salida
     }
     
     public static void leerValores(){
@@ -34,7 +33,7 @@ public class Caras {
                 matriz[f][c] = s.nextInt(); 
             }
         }
-        for(int f=0;f<filas;f++){
+        for(int f=0;f<filas;f++){ //confirmacion visual de la matriz
             for(int c=0;c<columnas;c++){		
                 System.out.print(matriz[f][c]+"\t");
             }
@@ -157,10 +156,8 @@ public class Caras {
     
     public static void compararValoresColumna(){
         //comparar valores de una columna entre 2 filas
-    	//int cont=0; para que es esto??
         for(int f=0;f+1<filas;f++){
             for(int c=0;c<columnas;c++){
-                //5cont++;
                 if(matriz[f][c] == matriz[f+1][c]){
                     int numeroRepetido = matriz[f][c];
                     for(int i=c+1;i<columnas;i++){
@@ -176,7 +173,7 @@ public class Caras {
             }
         }
     }
-    public static void sumaCaras(){
-        caras = 5+carasSuperiores+carasColindantes;
+    public static void carasTotales(){
+        System.out.println(caras+carasSuperiores+carasColindantes);
     }
 }
