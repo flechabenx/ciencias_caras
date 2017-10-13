@@ -14,8 +14,7 @@ public class Caras {
         caras = 5;
         carasSuperiores();
         carasColindantes();
-        int totales = caras+carasSuperiores+carasColindantes;
-        System.out.println("Caras Totales: "+totales);
+        carasTotales();
     }
     
     public static void leerValores(){
@@ -31,7 +30,7 @@ public class Caras {
                 matriz[f][c] = s.nextInt(); 
             }
         }
-        for(int f=0;f<filas;f++){
+        for(int f=0;f<filas;f++){ //confirmacion visual de la matriz
             for(int c=0;c<columnas;c++){		
                 System.out.print(matriz[f][c]+"\t");
             }
@@ -56,13 +55,13 @@ public class Caras {
     			}
     		}
     	}
-    	System.out.println("Caras Colindantes: "+carasColindantes);
+    	System.out.println("Caras Colindantes: "+carasColindantes); //temporal
     }
     
     public static void carasSuperiores(){
         compararValoresFila();
         compararValoresColumna();
-        System.out.println("Caras Superiores: "+carasSuperiores);
+        System.out.println("Caras Superiores: "+carasSuperiores); //temporal
     }
     
     public static void compararValoresFila(){
@@ -99,4 +98,8 @@ public class Caras {
             }
         }
     }
+    public static void carasTotales(){
+		int totales = caras+carasSuperiores+carasColindantes;
+		System.out.println("Caras Totales: "+totales);
+	}
 }
