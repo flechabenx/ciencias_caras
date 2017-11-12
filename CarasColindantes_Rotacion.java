@@ -15,7 +15,7 @@ public class Caras {
     public static void main(String[] args) {
         leerValores();//Entrada  
         caras = 5;
-        carasSuperiores();//Procesos
+        calculoCarasSuperiores();//Procesos
         calculoCarasColindantes();
         carasTotales();//Salida
     }
@@ -135,7 +135,7 @@ public class Caras {
         }
     }
     
-    public static void carasSuperiores(){
+    public static void calculoCarasSuperiores(){
         compararValoresFila();
         compararValoresColumna();
         System.out.println("Caras Superiores: "+carasSuperiores);
